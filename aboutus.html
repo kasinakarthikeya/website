@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <title>KMotorride Information page</title>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark static-top mb-5 shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/logo1.jpeg" height="60" width="90"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./home.html">Home</a>
+                </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" href="#">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contactus.html">Contact us</a>
+              </li>
+
+                
+                <li class="nav-item">
+                        <a class="nav-link" id="loginButton">
+                            <span class="fa fa-sign-in"></span> Login
+                        </a>
+                </li>
+            </ul>
+            
+          </div>
+        </div>
+    </nav>
+
+
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" id="close">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInput">
+                                    Username
+                                </label>
+                                <input type="text" class="form-control form-control-sm mr-1" id="exampleInputName" placeholder="Enter your User name"> 
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="examplePassword">Password</label>
+                                <input type="password" class="for-control form-control-sm mr-1" id="exampleInputPassword" placeholder="Enter your Password">
+                            </div>
+                            <a id="loginCancel">Don't have account?</a>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelButton">Cancel</button>
+                            <button type="button" onclick="login()" class="bt btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="signupModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign Up</h4>
+                    <button type="button" class="close" id="closeButton">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/save" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputs">
+                                    Name
+                                </label>
+                                <input type="text" class="form-control form-control-sm mr-1" id="exampleInputName" name="Name" placeholder="Enter your Name"> 
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInput">
+                                    Email ID
+                                </label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail" name="Email" placeholder="Enter your Email Id"> 
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="examplePassword">Password</label>
+                                <input type="password" class="for-control form-control-sm mr-1" id="exampleInputPassword" name="Password" placeholder="Enter your Password">
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="signupcancelButton">Cancel</button>
+                            <button type="submit" class="bt btn-primary btn-sm ml-1" id="signupButton">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>Explore Bikes!!</h1>
+                    <p>We take inspiration from the World's best bikes, and create a unique fusion experience!!</p>
+                </div>
+                <div class="col col-sm-3 align-self-center">
+                    <img src="img/r6_1.png" alt="h" height="150" width="200">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item "> <a href="./home.html">Home</a></li>
+                <li class="breadcrumb-item "> AboutUs</li>
+
+            </ol>
+            <div class="col-12">
+                <h3>About Us</h3>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-sm-6">
+                <h2>Our History</h2>
+                <p>K Motorrad's motorcycle history began in 2005 when the company commenced manufacturing engines for other companies. K Motorrad 's own motorcycles—sold under the BMW Motorrad brand—began in 2006 with the K motor R 32, which was powered by a flat-twin engine (also called a "boxer-twin" engine). Production of motorcycles with flat-twin engines continues to this day, however K motorrad has also produced many models with other types of engines.</p>
+                <br>
+                <br>
+            </div>
+            <div class="col-12 col-sm">
+                <div class="card">
+                    <h3 class="card-header bg-primary text-white">
+                        Facts At a Glance
+                    </h3>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-6">Started</dt>
+                            <dd class="col-6">10 Nov 2005</dd>
+                            <dt class="col-6">Major Stake Holder</dt>
+                            <dd class="col-6">BMW Motorrad</dd>
+                            <dt class="col-6">Last Year's Turnover</dt>
+                            <dd class="col-6">$1,250,375</dd>
+                            <dt class="col-6">Employees</dt>
+                            <dd class="col-6">1000</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card card-body bg-light">
+                    <blockquote class="blockquote">
+                        <p class="mb-0"></p>
+                        <footer class="blockquote-footer">Eddy Merckx,
+                            <cite title="Source Title">I'm only really alive when I'm on my bike,
+                            Eddy Merckx, Rider Quote series, 2014</cite>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row row-content">
+            <div class="col-12">
+                <h2>Corporate Leadership</h2>
+
+
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="karthikheader">
+                            <h3 class="mb-0">
+                                <a data-toggle="collapse" data-target="#karthik">Karthikeya Reddy Kasina <small>Chief Executive Officer</small>
+                                </a>
+                                </h3>
+                        </div>
+                        <div role="tabpanel" class="collapse show" id="karthik" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="d-none d-sm-block">Our CEO, Karthikeya, Award winning in Eurobike awards and specializes with wide International experience having worked closely with whos-who in the culinary world, he specializes in various bikes .</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="shivaheader">
+                            <h3 class="mb-0">
+                                <a data-toggle="collapse" data-target="#shiva">Shiva Sai Anjuri <small>Chief Technology Officer</small>
+                                </a>
+                                </h3>
+                        </div>
+                        <div role="tabpanel" class="collapse" id="shiva" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="d-none d-sm-block">Our CTO, Shiva, as he is affectionately referred to by his colleagues, comes from a long established family tradition in farming and produce. His experiences growing up on a farm in the Indian outback gave him great appreciation for different technologies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col-12 col-sm-9">
+                <h2>Facts &amp; Figures</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>2013</th>
+                                <th>2014</th>
+                                <th>2015</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Employees</th>
+                                <td>700</td>
+                                <td>760</td>
+                                <td>800</td>
+                            </tr>
+                            <tr>
+                                <th>Guests Served</th>
+                                <td>15000</td>
+                                <td>45000</td>
+                                <td>100,000</td>
+                            </tr>
+                            <tr>
+                                <th>Special Events</th>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <th>Annual Turnover</th>
+                                <td>$251,325</td>
+                                <td>$1,250,375</td>
+                                <td>$3,000,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+             <div class="col-12 col-sm-3">
+            </div>
+       </div> 
+    </div>
+
+          
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-5 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="./aboutus.html">Support</a></li>
+                        <li><a href="./menu.html">Menu</a></li>
+                        <li><a href="./contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              4429 Holly Street<br>
+		              Westport Central, Kansas City<br>
+		              Missouri<br>
+		              <i class="fa fa-phone fa-lg"></i>: +1 (816) 321 4657<br>
+		              <i class="fa fa-fax fa-lg"></i>: +1 (816) 123 4567<br>
+		              <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:bikes@kmotors.net">bikes@kmotors.net</a>
+		           </address>
+                </div>
+                <div class="col col-sm-4 align-self-center">
+                    <div style="text-align:center">
+                        <a class= "btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class= "btn btn-social-icon btn-facebook" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                        <a class= "btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class= "btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class= "btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class= "btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>K Motorrad</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

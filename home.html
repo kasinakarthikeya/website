@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <title>KKR MOTORRAD Home page</title>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark static-top mb-5 shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/logo1.jpeg" height="60" width="90"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="./aboutus.html">AboutUs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contactus.html">Contact us</a>
+              </li>
+
+               <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Models
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">BMW</a>
+                      <a class="dropdown-item" href="#">Ducati</a>
+                      <a class="dropdown-item" href="#">Triumph</a>
+                    </div>
+                </li> -->
+                
+                <li class="nav-item">
+                        <a class="nav-link" id="loginButton">
+                            <span class="fa fa-sign-in"></span> Login
+                        </a>
+                </li>
+            </ul>
+            
+          </div>
+        </div>
+    </nav>
+
+
+
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" id="close">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInput">
+                                    Username
+                                </label>
+                                <input type="text" class="form-control form-control-sm mr-1" id="exampleInputName" placeholder="Enter your Username"> 
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="examplePassword">Password</label>
+                                <input type="password" class="for-control form-control-sm mr-1" id="exampleInputPassword" placeholder="Enter your Password">
+                            </div>
+                            <a id="loginCancel">Don't have account?</a>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelButton">Cancel</button>
+                            <button type="button" onclick="login()" class="bt btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="signupModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign Up</h4>
+                    <button type="button" class="close" id="closeButton">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/save" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputs">
+                                    Name
+                                </label>
+                                <input type="text" class="form-control form-control-sm mr-1" id="exampleInputName" name="Name" placeholder="Enter your Name"> 
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInput">
+                                    Email ID
+                                </label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail" name="Email" placeholder="Enter your Email Id"> 
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="examplePassword">Password</label>
+                                <input type="password" class="for-control form-control-sm mr-1" id="exampleInputPassword" name="Password" placeholder="Enter your Password">
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="signupcancelButton">Cancel</button>
+                            <button type="submit" class="bt btn-primary btn-sm ml-1" id="signupButton">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>Explore Bikes!!</h1>
+                    <p>We take inspiration from the World's best bikes, and create a unique fusion experience!!</p>
+                </div>
+                <div class="col col-sm-3 align-self-center">
+                    <img src="img/r6_1.png" alt="h" height="150" width="200">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+   <div class="container">
+
+        <div class="row row-content">
+            
+            <div class="col-12">   
+             <div id="mycarousel" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner" role="listbox">
+                 <div class="carousel-item active">
+                     <img class="d-block img-fluid" src="img/bmw_s_1000_r.jpg" alt="Bike" id="mycar">
+                     <div class="carousel-caption d-none d-md-block">
+                         <h2>BMW S1000 R <span class="badge badge-danger"> NEW</span> <span class="badge badge-pill badge-default">$24,000</span></h2>
+                         <p class="hidden-xs-down">The BMW S 1000 R is concentrated energy – with DNA from racing. Discover the agility, precision and powerful punch of the machine.</p>
+                     </div>
+                 </div>
+                 <div class="carousel-item">
+                     <img class="d-block img-fluid" src="img/ducati_panigale.webp" alt="Buffet" id="mycar">
+                     <div class="carousel-caption d-none d-md-block">
+                         <h2>Ducati Street Fighter <span class="badge badge-danger">New</span></h2>
+                         <p class="hidden-xs-down">Streetfighter V2 is a sports naked with a one-of-a-kind character. It accommodates the needs of those looking for a bike that can combine the sporty DNA of the Panigale V2 with both the attitude and style of the much-admired Streetfighter. </p>
+                     </div>
+                 </div>
+                 <div class="carousel-item">
+                     <img class="d-block img-fluid" src="img/triumph.jpg" alt="Alberto" id="mycar">
+                     <div class="carousel-caption d-none d-md-block">
+                         <h2>Triumph</h2>
+                         
+                         <p class="hidden-xs-down">All-new in every dimension, the Speed Triple 1200 RS delivers an absolute revolution in terms of Speed Triple power, performance, handling and technology.</p>
+                     </div>
+                 </div>
+                 <ol class="carousel-indicators">
+                         <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                         <li data-target="#mycarousel" data-slide-to="1"></li>
+                         <li data-target="#mycarousel" data-slide-to="2"></li>
+                 </ol>
+                 <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                         <span class="carousel-control-prev-icon"></span>
+                 </a>
+                 <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                         <span class="carousel-control-next-icon"></span>
+                 </a>
+               </div>
+             </div>
+          </div>
+       </div>
+       <div class="row"></div>
+<hr>
+    <div class="row row-content align-items-center">
+        <div class="col-12 col-sm-4 order-sm-last col-md-3">
+            <h3>Our Best selling Bike</h3>
+        </div>
+        <div class="col col-sm order-sm-first col-md">
+            <div class="media">
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/bmw_x1000.webp" alt="bmw_x1000" height="200" width="200">
+                <div class="media-body">
+                    <h2 class="mt-0">BMW S1000 RR <span class="badge badge-danger">NEW</span> <span class="badge badge-pill badge-secondary">$25,000</span></h2>
+                    <p class="d-none d-sm-block">BMW S1000RR is a race oriented sport bike initially made by BMW Motorrad to compete in the 2009 Superbike World Championship, that is now in commercial production.</p>                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+<hr>
+    <div class="row row-content align-items-center">
+        <div class="col-12 col-sm-4 col-md-3">
+            <h3>This Month's Promotions</h3>
+        </div>
+        <div class="col col-sm col-md">
+            <h2 class="mt-0">Ducati Panigale V4 <span class="badge badge-danger">NEW</span></h2>
+            <p>The Panigale V4 MY23 represents the last step in the characteristic path of Borgo Panigale's sports bikes. As is the case with motorcycles engaged in MotoGP and WorldSBK, the Panigale V4 is updated and improved year after year, and the 2022 version represents the most significant evolution since its launch year </p>
+        </div>
+        <div class="media">
+            <img class="d-flex mr-3 img-thumbnail align-self-enter" src="img/ducati_v4.webp" alt="ducati" height="200" width="200">
+        </div>
+    </div>
+
+    <hr>
+    <div class="row row-content align-items-center">
+        <div class="col-12 col-sm-4 order-sm-last col-md-3">
+            <h3>Meet our Culinary Specialists</h3>
+        </div>
+        <div class="col col-sm order-sm-first col-md">
+            <div class="media">
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/kart.jpeg" alt="karthik" height="200" width="200">
+                <div class="media-body">
+                    <h2 class="mt-0">Karthikeya Reddy Kasina</h2>
+                    <h4>Cheif Executive Officer</h4>
+                    <p>Award winning in Eurobike awards and specializes with wide International experience having worked closely with whos-who in the culinary world, he specializes in various bikes . </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>New Arrivals..</h3>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/triumph_1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Triumph Daytona-moto2-765</h5>
+                      <p class="card-text">The new Daytona Moto2™ 765 comes with the highest specification ever seen on Triumph’s iconic championship-winning racer.</p>
+                      <a href="https://www.triumphmotorcycles.com/motorcycles/roadsters/daytona-moto2-765/limited-edition" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/bmw_r_1250.jpg" alt="bmw_r">
+                    <div class="card-body">
+                      <h5 class="card-title">BMW R 1250</h5>
+                      <p class="card-text">The world is there to be discovered. There’s always something new. The R 1250 GS is the queen of the touring enduro It’s just made for impassable routes, adverse conditions.</p>
+                      <a href="https://www.bmwmotorcycles.com/en/models/adventure/r1250gsadventure.html" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+    </div>
+
+
+          
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-5 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="./aboutus.html">About us</a></li>
+                        <li><a href="./menu.html"></a></li>
+                        <li><a href="contactus.html">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              4429 Holly Street<br>
+		              Westport Central, Kansas City<br>
+		              Missouri<br>
+		              <i class="fa fa-phone fa-lg"></i>: +1 (816) 321 4657<br>
+		              <i class="fa fa-fax fa-lg"></i>: +1 (816) 123 4567<br>
+		              <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:bikes@kmotors.net">bikes@kmotors.net</a>
+		           </address>
+                </div>
+                <div class="col col-sm-4 align-self-center">
+                    <div style="text-align:center">
+                        <a class= "btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class= "btn btn-social-icon btn-facebook" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                        <a class= "btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class= "btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class= "btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class= "btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>KKR MOTORRAD</p>
+                </div>
+           </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
